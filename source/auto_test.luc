@@ -1,0 +1,196 @@
+module auto_test (
+    input clk,    // clock
+    input rst,    // reset
+    input alu_output[16],
+    input testcase[5],
+    output wrong_output[1]
+  ) {
+  
+  
+  
+  always {
+    // alu output vs hard-coded output
+    
+    case(testcase){
+    
+      d1: 
+        if(alu_output != d6){
+          wrong_output = 1;
+          }
+        else{
+          wrong_output = 0;
+        }
+        
+      d2:
+        if(alu_output != 3b100){
+          wrong_output = 1;
+          }
+        else{
+          wrong_output = 0;
+        }
+      d3:
+        if(alu_output != d2){
+          wrong_output = 1;
+          }
+        else{
+          wrong_output = 0;
+        }  
+         
+      d4:
+        if(alu_output != 16b1111111111111110){ 
+          wrong_output = 1;
+          }
+        else{
+          wrong_output = 0;
+        }
+         
+       
+      d5: 
+        if(alu_output != d8){
+          wrong_output = 1;
+          }
+        else{
+          wrong_output = 0;
+        }
+        
+      d6:
+        if(alu_output != d13){ //wrong output for error
+          wrong_output = 1;
+          }
+        else{
+          wrong_output = 0;
+        }
+        
+      d7:
+        if(alu_output != 1){
+          wrong_output = 1;
+          }
+        else{
+          wrong_output = 0;
+        }
+        
+      d8:
+        if(alu_output != 0){
+          wrong_output = 1;
+          }
+        else{
+          wrong_output = 0;
+        }
+        
+      d9:
+        if(alu_output != 1){
+          wrong_output = 1;
+          }
+        else{
+          wrong_output = 0;
+        }
+       
+      d10:
+         if(alu_output != 0){
+          wrong_output = 1;
+           }
+        else{
+          wrong_output = 0;
+        }
+        
+      d11:
+        if(alu_output != 1){
+          wrong_output = 1;
+          }
+        else{
+          wrong_output = 0;
+        }
+     
+      d12:
+        if(alu_output != 0){
+          wrong_output = 1;
+          }
+        else{
+          wrong_output = 0;
+        }
+        
+      d13:
+        if(alu_output != d0){
+          wrong_output = 1;
+          }
+        else{
+          wrong_output = 0;
+        }
+        
+      d14:
+        if(alu_output != b110){
+          wrong_output = 1;
+          }
+        else{
+          wrong_output = 0;
+        }
+        
+      d15:
+        if(alu_output != b110){
+          wrong_output = 1;
+          }
+        else{
+          wrong_output = 0;
+        }
+        
+      d16:
+        if(alu_output != b010){
+          wrong_output = 1;
+          }
+        else{
+          wrong_output = 0;
+        }
+          
+      d17:
+        if(alu_output != d224){
+          wrong_output = 1;
+          }
+        else{
+          wrong_output = 0;
+        }
+        
+      d18:
+        if(alu_output != b001){
+          wrong_output = 1;
+          }
+        else{
+          wrong_output = 0;
+        }
+        
+      d19:
+        if(alu_output != d001){
+          wrong_output = 1;
+          }
+        else{
+          wrong_output = 0;
+        }
+      
+      d20:
+        if(alu_output != d5){
+          wrong_output = 1;
+          }
+        else{
+          wrong_output = 0;
+        } 
+        
+      d21:
+        if(alu_output != 16b1111111111111000){
+          wrong_output = 1;
+          }
+        else{
+          wrong_output = 0;
+        } 
+        
+      d22:
+        if(alu_output != 16b1111111111111010){
+          wrong_output = 1;
+          }
+        else{
+          wrong_output = 0;
+        }
+
+      default:
+        wrong_output = 0;
+    }
+  }
+}
